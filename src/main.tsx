@@ -6,7 +6,11 @@ import {worker} from './mock-server/browser';
 
 const queryClient = new QueryClient();
 
-worker.start().then(() => {
+worker.start({
+  serviceWorker: {
+    url: '/tanstack-image-upload-eager-ui-demo/mockServiceWorker.js',
+  }
+}).then(() => {
   ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
       <QueryClientProvider client={queryClient}>

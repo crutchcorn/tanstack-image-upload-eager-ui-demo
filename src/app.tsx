@@ -66,7 +66,7 @@ export const App = () => {
     : resources ?? [];
 
   if (isLoading || !resources) {
-    return <div>...</div>;
+    return <div>Loading...</div>;
   }
 
   return (
